@@ -1,3 +1,4 @@
+body { margin: 0.5em; }
 html { font-family: sans-serif; line-height: 1.25 }
 dl, p, blockquote, ol, ul, pre, address { margin-top: 0.5em; margin-bottom: 0.5em }
 dt { margin-top: 0.5em; }
