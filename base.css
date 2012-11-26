@@ -1,8 +1,14 @@
-html { font-family: sans-serif; line-height: 1.25em }
-dl, p, blockquote, ol, ul, pre, address { margin-top: 0.625em; margin-bottom: 0.625em }
-dt { margin-top: 0.625em; }
+html { font-family: sans-serif; line-height: 1.25 }
+dl, p, blockquote, ol, ul, pre, address { margin-top: 0.5em; margin-bottom: 0.5em }
+dt { margin-top: 0.5em; }
 table { border-collapse: collapse }
 th, td, caption { padding: 0.25em }
 th, td { border-style: solid; border-width: 1px; }
-/* TODO headings */
 
+h1 { font-size: 2em; margin-top: 0.5em; margin-bottom: 0.25em }
+h2 { font-size: 1.5em; margin-top: 0.66667em; margin-bottom: 0.33333em; }
+h3 { font-size: 1.1875em; margin-top: 0.8421052em; margin-bottom: 0.421052em; }
+h4 { font-size: 1.125em; margin-top: 0.88888888em; margin-bottom: 0.444444em; }
+h5, h6 { font-size: 1em; margin-top: 1em; margin-bottom: 0.5em }
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0 }
