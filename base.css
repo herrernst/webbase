@@ -1,5 +1,5 @@
 body { margin: 0.5em; }
-html { font-family: sans-serif; line-height: 1.25 }
+html { font-family: sans-serif; }
 dl, p, blockquote, ol, ul, pre, address { margin-top: 0.5em; margin-bottom: 0.5em }
 dt { margin-top: 0.5em; }
 table { border-collapse: collapse }
@@ -13,3 +13,17 @@ h4 { font-size: 1.125em; margin-top: 0.88888888em; margin-bottom: 0.444444em; }
 h5, h6 { font-size: 1em; margin-top: 1em; margin-bottom: 0.5em }
 
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0 }
+
+/* optional */
+/* some fonts have a fine line height e.g. on windows, on mac it is stuffed; mdn: desktop ua roughly 1.2 */
+html { line-height: 1.25 }
+
+.debug body {
+	background-size: 1.25em 1.25em;
+	background-repeat: repeat;
+	background-image: -webkit-linear-gradient(black 5%, white 5%, white);
+	background-image: -moz-linear-gradient(black 5%, white 5%, white);
+	background-image: -ms-linear-gradient(black 5%, white 5%, white);
+	background-image: -o-linear-gradient(black 5%, white 5%, white);
+	background-image: linear-gradient(black 5%, white 5%, white);
+}
