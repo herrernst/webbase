@@ -4,3 +4,6 @@
 [submodule "lib/classList.js"]
 	path = lib/classList.js
 	url = https://github.com/eligrey/classList.js
+[submodule "lib/EventListener"]
+	path = lib/EventListener
+	url = https://github.com/jonathantneal/EventListener

@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" class='no-js'>
   <head>
     <title>Sample text</title>
 	  <link rel="stylesheet" href="base.css" />
-    <script src="lib/es5-shim/es5-shim.min.js"></script>
+    <script src="lib/es5-shim/es5-shim.min.js"></script><!-- is good, aumgentjs also good -->
     <script src="lib/classList.js/classList.min.js"></script>
+    <script src="lib/EventListener/EventListener.js"></script><!-- TODO seems to be error source -->
+    <script>
+    //classList works in IE8
+    document.documentElement.classList.remove('no-js');
+    
+    //addEventListener and DOMContentLoaded work in IE8
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      //addEventListener work in IE8
+      document.querySelector("a").addEventListener('click', function(ev) {
+        if (!confirm("Navigate to \"" + ev.currentTarget.href + "\"?")) {
+          ev.preventDefault();
+        }
+      }, false)
+      
+      //also, doesn't work in IE8 (click events get mungeld up ...)
+      document.getElementsByTagName("li")[0].addEventListener('click', function (ev) {
+        alert('click on tag "' + ev.currentTarget.tagName + '"');
+      })
+      
+    }, false);
+    </script>
   </head>
   <body>
   <h1>Header One</h1>
@@ -13,7 +35,7 @@
 <p>Lorem ipsum <em>emphasised text</em> dolor sit amet, <strong>strong text</strong> 
 consectetur adipisicing elit, <abbr title="">abbreviated text</abbr> sed do eiusmod tempor 
 <abbr title="">acronym text</abbr> incididunt ut labore et dolore magna aliqua. Ut 
-<q>quoted text</q> enim ad minim veniam, quis nostrud exercitation <a href="/">link text</a> 
+<q>quoted text</q> enim ad minim veniam, quis nostrud exercitation <a href="/a1">link text</a> 
 ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute <del>deleted text</del> 
 <ins>inserted text</ins> irure dolor in reprehenderit in voluptate velit esse cillum 
 dolore eu fugiat nulla pariatur. Excepteur sint occaecat <code>code text</code> cupidatat 
@@ -24,7 +46,7 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 cupidatat non proident, sunt in culpa qui officia</p>
 </blockquote>
 
-<p><cite><a href="/">Cite author with link text</a></cite>, 2008</p>
+<p><cite><a href="/a2">Cite author with link text</a></cite>, 2008</p>
 
 <h2>Header 2</h2>
 
