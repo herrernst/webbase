@@ -1,3 +1,6 @@
 [submodule "lib/es5-shim"]
 	path = lib/es5-shim
 	url = https://github.com/kriskowal/es5-shim/
+[submodule "lib/classList.js"]
+	path = lib/classList.js
+	url = https://github.com/eligrey/classList.js
