@@ -7,3 +7,9 @@
 [submodule "lib/EventListener"]
 	path = lib/EventListener
 	url = https://github.com/jonathantneal/EventListener
+[submodule "ie8"]
+	path = ie8
+	url = https://github.com/WebReflection/ie8
+[submodule "lib/ie8"]
+	path = lib/ie8
+	url = https://github.com/WebReflection/ie8

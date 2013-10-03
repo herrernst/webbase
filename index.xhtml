@@ -5,7 +5,7 @@
 	  <link rel="stylesheet" href="base.css" />
     <script src="lib/es5-shim/es5-shim.min.js"></script><!-- is good, aumgentjs also good -->
     <script src="lib/classList.js/classList.min.js"></script>
-    <script src="lib/EventListener/EventListener.js"></script><!-- TODO seems to be error source -->
+    <script src="lib/ie8/build/ie8.js"></script>
     <script>
     //classList works in IE8
     document.documentElement.classList.remove('no-js');
@@ -13,17 +13,14 @@
     //addEventListener and DOMContentLoaded work in IE8
     document.addEventListener('DOMContentLoaded', function () {
       
-      //addEventListener work in IE8
-      document.querySelector("a").addEventListener('click', function(ev) {
-        if (!confirm("Navigate to \"" + ev.currentTarget.href + "\"?")) {
-          ev.preventDefault();
-        }
-      }, false)
-      
-      //also, doesn't work in IE8 (click events get mungeld up ...)
-      document.getElementsByTagName("li")[0].addEventListener('click', function (ev) {
-        alert('click on tag "' + ev.currentTarget.tagName + '"');
-      })
+      //array.proto.forEach works in IE8, document.querySelector is native 8 (but does do all selectors)
+      Array.prototype.forEach.call(document.querySelectorAll("a"), function (node) {        
+        node.addEventListener('click', function(ev) {
+          if (!confirm("Navigate to \"" + ev.currentTarget.href + "\"?")) {
+            ev.preventDefault();
+          }
+        }, false)
+      });
       
     }, false);
     </script>
