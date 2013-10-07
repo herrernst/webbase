@@ -5,8 +5,7 @@
   //classList works in IE8
   document.documentElement.classList.remove('no-js');
 
-  //addEventListener and DOMContentLoaded work in IE8
-  document.addEventListener('DOMContentLoaded', function () {
+  function onInit () {
 
     //array.proto.forEach works in IE8, document.querySelector is native 8 (but may not work with all selectors)
     Array.prototype.forEach.call(document.querySelectorAll("p a"), function (node) {
@@ -17,6 +16,14 @@
         }
       }, false);
     });
+    document.body.style.backgroundColor = 'red'
 
-  }, false);
+  }
+
+  if (document.readyState === 'interactive') {
+    onInit();
+  } else {
+    //addEventListener and DOMContentLoaded work in IE8
+    document.addEventListener('DOMContentLoaded', onInit, false);
+  }
 }());
