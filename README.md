@@ -1,5 +1,5 @@
-HTML text with sensible base styling
-====================================
+HTML text with sensible base styling and javascript shims/polyfill for IE8
+==========================================================================
 
 created by me
 

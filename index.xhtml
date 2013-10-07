@@ -3,7 +3,7 @@
   <head>
     <title>Sample text</title>
 	  <link rel="stylesheet" href="base.css" />
-    <script src="lib/es5-shim/es5-shim.min.js"></script><!-- is good, aumgentjs also good -->
+    <script src="lib/es5-shim/es5-shim.min.js"></script><!-- aumgentjs is also working -->
     <script src="lib/classList.js/classList.min.js"></script>
     <script src="lib/ie8/build/ie8.js"></script>
     <script>
@@ -13,8 +13,9 @@
     //addEventListener and DOMContentLoaded work in IE8
     document.addEventListener('DOMContentLoaded', function () {
       
-      //array.proto.forEach works in IE8, document.querySelector is native 8 (but does do all selectors)
-      Array.prototype.forEach.call(document.querySelectorAll("a"), function (node) {        
+      //array.proto.forEach works in IE8, document.querySelector is native 8 (but may not work with all selectors)
+      Array.prototype.forEach.call(document.querySelectorAll("p a"), function (node) {
+        //note: this is just for demonstration purposes, you should never add event listeners in a loop (instead, use delegation)
         node.addEventListener('click', function(ev) {
           if (!confirm("Navigate to \"" + ev.currentTarget.href + "\"?")) {
             ev.preventDefault();
