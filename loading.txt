@@ -1,0 +1,12 @@
+defer/async
+
+defer: line up scripts, execute them in order after "page parsing"; in firefox, this unfortunately happens after DOMContentLoaded, so you can not use plain DOMContentLoaded, but need some helper code (e.g. querying document.readyState). OTOH, because scripts are executed after page parsing, you possibly would not even need DOMContentLoaded, but just execute your scripts.
+IE < 10 messes up order in certain cases (e. g. when using innerHTML, which btw. should not happen, but is probably used for some support tests), this is the case when using jQuery on IE8 for example.
+Also, defer is not useful in Chrome on xhtml pages (no incremental rendering, no parallel download).
+defer seems to be not supported on Opera.
+
+async just executes scripts whenever they're ready, in no particular order. It seems to be undefined (which means depending on network speed) if they are executed before or after other deferred scripts.
+
+Safest way: put all your scripts before </body> without any of these attributes.
+
+Modelling a non-linear dependency tree is not possible with defer/async.
